@@ -27,5 +27,5 @@ yazarak kurulum saglayabilirsiniz
 
 Calistirma 
 
-  Derleyici uzerinden kodu calistirdiktan sonra analiz etmek istediginiz pcap veya pcapng dosyasini terminal kismina suruklemeniz yeterli
-  takip etmek istediginiz ip adresini yazdiktan sonra analizi yapip cikti verecektir.
+  tum dosyalari ayni klasor icine indirip app.py calistirdiktan sonra terminalde acilan local adresi aciniz.
+  Analiz etmek istediginiz dosyayi secip takip etmek istediginiz ip adresini de yazdiktan sonra analizi yapip cikti verecektir.
