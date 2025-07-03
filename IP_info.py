@@ -3,7 +3,7 @@ from scapy.all import rdpcap
 import pandas as pd
 from datetime import datetime
 
-def pcap_ip_bilgisi_goster(pcap_dosya, hedef_ip):
+def pcap_ip_bilgisi_goster(pcap_dosya, hedef_ip, return_df = False):
 
     #PCAP dosyasından belirli bir IP adresine ait paketleri analiz eder
 
@@ -58,10 +58,15 @@ def pcap_ip_bilgisi_goster(pcap_dosya, hedef_ip):
                 
                 sonuclar.append(paket_bilgi)
     
+       
     if sonuclar:
+
         df = pd.DataFrame(sonuclar)
-        print(f"Toplam {len(sonuclar)} paket bulundu:")
-        print(df.to_string(index=False))
+        if return_df:
+            return df
+        else:
+            print(f"Toplam {len(sonuclar)} paket bulundu:")
+            print(df.to_string(index=False))
         
         # İstatistikleri göster
         print("\n" + "-"*130)
@@ -92,10 +97,14 @@ def pcap_ip_bilgisi_goster(pcap_dosya, hedef_ip):
         print(f"En büyük: {df['Paket_Boyutu'].max()} byte")
         
     else:
-        print(f"{hedef_ip} adresine ait paket bulunamadı.")
+        if return_df:
+            return None
+        else:
+            print(f"{hedef_ip} adresine ait paket bulunamadı.")
 
-
+"""
 pcap_dosya = input("PCAP dosyasının adını giriniz veya dosyayı sürükleyiniz: ")  
 hedef_ip = input("Analiz etmek istediğiniz IP adresini giriniz: ")   
 
 pcap_ip_bilgisi_goster(pcap_dosya, hedef_ip)
+"""
