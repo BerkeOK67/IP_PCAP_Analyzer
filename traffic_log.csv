@@ -1,0 +1,11 @@
+Timestamp,IP Source,IP Destination,Source Port,Destination Port,Protocol,Packet Size,Local Label,AI Label,Src Country,Src City
+2025-08-02 01:33:25,192.168.1.16,216.58.212.10,58382,443,UDP,1292,Anomalous,Anomalous,Unknown,Unknown
+2025-08-02 01:33:25,192.168.1.16,216.58.212.10,58382,443,UDP,1292,Anomalous,Anomalous,Unknown,Unknown
+2025-08-02 01:33:25,192.168.1.16,216.58.212.10,52370,443,TCP,200,Normal,Normal,Unknown,Unknown
+2025-08-02 01:33:26,192.168.1.16,216.58.212.10,52370,443,TCP,93,Normal,Normal,Unknown,Unknown
+2025-08-02 01:33:26,192.168.1.16,192.168.1.1,65269,53,UDP,74,Normal,Normal,Unknown,Unknown
+2025-08-02 01:33:26,140.82.121.5,192.168.1.16,443,62100,TCP,54,Normal,Normal,Germany,Frankfurt am Main
+2025-08-02 01:33:26,216.58.212.10,192.168.1.16,443,52370,TCP,56,Normal,Normal,United States,Unknown
+2025-08-02 01:33:26,216.58.212.10,192.168.1.16,443,52370,TCP,56,Normal,Normal,United States,Unknown
+2025-08-02 01:33:27,216.58.212.10,192.168.1.16,443,52370,TCP,93,Normal,Normal,United States,Unknown
+2025-08-02 01:33:27,140.82.121.5,192.168.1.16,443,62100,TCP,1490,Anomalous,Anomalous,Germany,Frankfurt am Main
