@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>PCAP IP Analiz Aracı</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+    <h1>PCAP IP Analiz Aracı</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="pcapfile" class="form-label">PCAP Dosyası Yükle</label>
+            <input class="form-control" type="file" id="pcapfile" name="pcapfile" required>
+        </div>
+        <div class="mb-3">
+            <label for="ipaddress" class="form-label">IP Adresi</label>
+            <input class="form-control" type="text" id="ipaddress" name="ipaddress" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Analiz Et</button>
+    </form>
+    <hr>
+    {% if results %}
+        <h2>Analiz Sonuçları</h2>
+        {{ results|safe }}
+        {% if stats %}
+            <h3>Protokol Dağılımı</h3>
+            {{ stats.protokol|safe }}
+            <h3>En Çok Kullanılan Kaynak Portlar</h3>
+            {{ stats.kaynak_port|safe }}
+            <h3>En Çok Kullanılan Hedef Portlar</h3>
+            {{ stats.hedef_port|safe }}
+            <h3>Paket Boyutu İstatistikleri</h3>
+            <ul>
+                <li>Ortalama: {{ stats.boyut_ort }}</li>
+                <li>En küçük: {{ stats.boyut_min }}</li>
+                <li>En büyük: {{ stats.boyut_max }}</li>
+            </ul>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
